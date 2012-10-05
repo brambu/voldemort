@@ -27,6 +27,9 @@ def get_du(path):
       fullpath=os.path.join(d, f)
       size=os.path.getsize(fullpath)
       result[ext]+=size
+  for k in result.keys():
+    if result[k]==0:
+      result.pop(k)
   return result
 
 def printout(rdict,oformat):
